@@ -1,9 +1,10 @@
 ---
 title: "TAAC-2026：基于 baseline 的模型改进复盘"
 date: 2026-05-24 20:55:00 +0800
-categories: [科研妙招]
 tags: [TAAC, 推荐系统, CVR, 模型复盘]
-main_category: "科研妙招"
+discipline: "AI"
+course: "TAAC-2026"
+material_type: "竞赛复盘"
 description: "记录 TAAC-2026 代码相对 baseline 的主要改动、当前成绩，以及后续消融方向。"
 ---
 
