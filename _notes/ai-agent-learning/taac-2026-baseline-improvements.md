@@ -8,7 +8,7 @@ material_type: "竞赛复盘"
 description: "记录 TAAC-2026 代码相对 baseline 的主要改动、当前成绩，以及后续消融方向。"
 ---
 
-这篇文章记录 TAAC-2026 代码在官方 baseline 上做过的主要改动，也把目前分数放在前面，方便之后回看。
+这篇文章记录 TAAC-2026 代码在官方 baseline 上做过的主要改动，也把目前分数放在前面，方便之后回看。这里的官方 baseline 指比赛给出的原始 `baseline/train` 代码；`0.8289*` 是在官方 baseline 上做第一阶段改进后的分数，不是 baseline 本身的分数。
 
 <!--more-->
 
@@ -16,7 +16,8 @@ description: "记录 TAAC-2026 代码相对 baseline 的主要改动、当前成
 
 | 版本 | 分数 | 说明 |
 | --- | --- | --- |
-| baseline | `0.8289*` | 作为对照基线记录 |
+| 官方 baseline | `0.813` | 比赛给出的原始 baseline |
+| baseline 改进版 | `0.8289*` | 在官方 baseline 上做第一阶段改进后的记录 |
 | 当前代码 | `0.830368`，约 `0.8303*` | 截图中的 Best Score |
 
 ![TAAC-2026 当前代码 Best Score 截图](/assets/images/taac-2026-performance.jpeg)
