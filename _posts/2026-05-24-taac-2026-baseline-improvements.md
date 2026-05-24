@@ -15,7 +15,7 @@ description: "记录 TAAC-2026 代码相对 baseline 的主要改动、当前成
 
 | 版本 | 分数 | 说明 |
 | --- | --- | --- |
-| baseline | `0.889*` | 作为对照基线记录 |
+| baseline | `0.8289*` | 作为对照基线记录 |
 | 当前代码 | `0.830368`，约 `0.8303*` | 截图中的 Best Score |
 
 ![TAAC-2026 当前代码 Best Score 截图](/assets/images/taac-2026-performance.jpeg)
