@@ -1,6 +1,6 @@
 ---
 title: "TAAC-2026 复盘：从稀疏特征、时间信号到 target-aware 序列建模"
-date: 2026-06-24 21:00:00 +0800
+date: 2026-06-24 17:00:00 +0800
 tags: [TAAC, 推荐系统, PCVR, HyFormer, RankMixer, DIN, 特征工程, 模型复盘]
 main_category: "LLM4Rec"
 discipline: "LLM4Rec"
