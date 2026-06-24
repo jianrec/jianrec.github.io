@@ -62,3 +62,4 @@ defaults:
 
 study_order:
   - ai-agent-learning
+  - git
