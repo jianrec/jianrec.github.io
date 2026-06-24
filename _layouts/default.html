@@ -134,6 +134,8 @@
     h1 { font-size: 2.5rem; }
 
     footer { max-width: var(--max-width); margin: 4rem auto 0; padding: 2rem; text-align: center; font-size: 0.85rem; color: var(--color-light); border-top: 1px solid var(--color-border); }
+    .site-stats { margin-top: 0.45rem; display: flex; justify-content: center; gap: 0.9rem; flex-wrap: wrap; }
+    .site-stats span { white-space: nowrap; }
 
     /* LaTeX 徽标专用样式 */
     .latex-logo { font-variant: small-caps; }
@@ -600,6 +602,12 @@
 
   <footer>
     &copy; {{ site.time | date: "%Y" }} {{ site.author.name }}.
+    {% if site.traffic.busuanzi %}
+    <div class="site-stats">
+      <span id="busuanzi_container_site_pv">访问 <span id="busuanzi_value_site_pv">...</span> 次</span>
+      <span id="busuanzi_container_site_uv">访客 <span id="busuanzi_value_site_uv">...</span> 人</span>
+    </div>
+    {% endif %}
   </footer>
 
   <script>
@@ -687,6 +695,9 @@
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
+  {% if site.traffic.busuanzi %}
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  {% endif %}
   <script>
     // 初始化搜索功能
     if (document.getElementById('search-input')) {

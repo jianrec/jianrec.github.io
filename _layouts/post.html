@@ -31,22 +31,33 @@ layout: default
         By {{ page.author | default: site.author.name }}
       </span>
 
-      <div id="post-stats" style="display: none; gap: 1.2rem; align-items: center; font-family: var(--font-body); font-size: 0.95rem; opacity: 0.85;">
+      <div id="post-stats" style="display: flex; gap: 1.2rem; align-items: center; font-family: var(--font-body); font-size: 0.95rem; opacity: 0.85;">
 
+        {% if site.traffic.busuanzi %}
         <div style="display: flex; align-items: center; gap: 0.4rem;" title="阅读量">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
             <circle cx="12" cy="12" r="3"></circle>
           </svg>
-          <span class="waline-pageview-count" data-path="{{ page.url }}">...</span>
+          <span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv">...</span></span>
         </div>
+        {% endif %}
 
+        {% if site.comments.provider == "utterances" %}
+        <a href="#comments" style="display: flex; align-items: center; gap: 0.4rem; color: inherit; text-decoration: none;" title="评论">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+          </svg>
+          <span>评论</span>
+        </a>
+        {% elsif site.waline_server and site.waline_server != "" %}
         <div style="display: flex; align-items: center; gap: 0.4rem;" title="评论数">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
           </svg>
           <span class="waline-comment-count" data-path="{{ page.url }}">...</span>
         </div>
+        {% endif %}
 
       </div>
     </div>
@@ -199,6 +210,16 @@ layout: default
       font-size: 0.78rem;
     }
   }
+
+  .comments-section {
+    margin-top: 5rem;
+    padding-top: 2rem;
+    border-top: 1px dashed var(--color-border);
+  }
+  .comments-title {
+    font-size: 1.45rem;
+    margin-bottom: 1rem;
+  }
 </style>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" />
@@ -209,8 +230,23 @@ layout: default
 <div id="rxn-widget" class="rxn-widget" data-post="{{ page.permalink | default: page.url }}" style="display: none;"></div>
 {% endif %}
 
-{% if site.waline_server and site.waline_server != "" %}
-<div id="waline" style="margin-top: 5rem; padding-top: 2rem; border-top: 1px dashed var(--color-border); display: none;"></div>
+{% if site.comments.provider == "utterances" and site.comments.utterances.repo %}
+<section id="comments" class="comments-section">
+  <h2 class="comments-title">评论</h2>
+  <script src="https://utteranc.es/client.js"
+          repo="{{ site.comments.utterances.repo }}"
+          issue-term="{{ site.comments.utterances.issue_term | default: 'pathname' }}"
+          label="{{ site.comments.utterances.label | default: 'comment' }}"
+          theme="{{ site.comments.utterances.theme | default: 'preferred-color-scheme' }}"
+          crossorigin="anonymous"
+          async>
+  </script>
+</section>
+{% elsif site.comments.provider == "waline" and site.waline_server and site.waline_server != "" %}
+<section id="comments" class="comments-section">
+  <h2 class="comments-title">评论</h2>
+  <div id="waline" style="display: none;"></div>
+</section>
 
 <script type="module">
   import { init } from 'https://unpkg.com/@waline/client@v2/dist/waline.mjs';
@@ -248,9 +284,7 @@ layout: default
     if (!ok) return;
 
     const walineEl = document.getElementById('waline');
-    const statsEl = document.getElementById('post-stats');
     if (walineEl) walineEl.style.display = '';
-    if (statsEl) statsEl.style.display = 'flex';
 
     init({
       el: '#waline',
