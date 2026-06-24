@@ -1,6 +1,6 @@
 ---
 title: "KuaiRand 跨域多场景精排项目面试复习：从 DIN 到 PSRG/PCRG"
-date: 2026-06-24 21:00:00 +0800
+date: 2026-06-24 19:20:00 +0800
 tags: [KuaiRand, 推荐系统, 精排, DIN, 跨域推荐, 多兴趣, PSRG, PCRG, GAUC, 面试复习]
 main_category: "LLM4Rec"
 discipline: "LLM4Rec"
