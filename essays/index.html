@@ -1,15 +1,15 @@
 ---
 layout: default
-title: 随笔漫谈
+title: 技术随笔
 ---
 <article style="max-width: 800px; margin: 0 auto; padding: 2rem 1rem;">
   <header style="margin-bottom: 3rem; text-align: center;">
-    <h1 style="font-size: 2.2rem; color: var(--color-ink); margin-bottom: 1rem;">随笔漫谈</h1>
-    <p style="color: var(--color-light); font-style: italic;">Random Notes &amp; Thoughts</p>
+    <h1 style="font-size: 2.2rem; color: var(--color-ink); margin-bottom: 1rem;">技术随笔</h1>
+    <p style="color: var(--color-light); font-style: italic;">Technical Notes &amp; Reflections</p>
   </header>
 
-  {% assign raw_posts_main  = site.notes | where: "main_category", "随笔漫谈" %}
-  {% assign raw_posts_extra = site.notes | where_exp: "item", "item.extra_categories contains '随笔漫谈'" %}
+  {% assign raw_posts_main  = site.notes | where: "main_category", "技术随笔" %}
+  {% assign raw_posts_extra = site.notes | where_exp: "item", "item.extra_categories contains '技术随笔'" %}
   {% assign raw_posts = raw_posts_main | concat: raw_posts_extra %}
   {% assign dated_posts = raw_posts | where_exp: "item", "item.date" | sort: "date" | reverse %}
   {% assign undated_posts = raw_posts | where_exp: "item", "item.date == nil" %}

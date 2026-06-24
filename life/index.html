@@ -1,15 +1,15 @@
 ---
 layout: default
-title: 生活攻略
+title: Agent
 ---
 <article style="max-width: 800px; margin: 0 auto; padding: 2rem 1rem;">
   <header style="margin-bottom: 3rem; text-align: center;">
-    <h1 style="font-size: 2.2rem; color: var(--color-ink); margin-bottom: 1rem;">生活攻略</h1>
-    <p style="color: var(--color-light); font-style: italic;">Life Hacks &amp; Guides</p>
+    <h1 style="font-size: 2.2rem; color: var(--color-ink); margin-bottom: 1rem;">Agent</h1>
+    <p style="color: var(--color-light); font-style: italic;">Agent Systems &amp; Workflows</p>
   </header>
 
-  {% assign raw_posts_main  = site.notes | where: "main_category", "生活攻略" %}
-  {% assign raw_posts_extra = site.notes | where_exp: "item", "item.extra_categories contains '生活攻略'" %}
+  {% assign raw_posts_main  = site.notes | where: "main_category", "Agent" %}
+  {% assign raw_posts_extra = site.notes | where_exp: "item", "item.extra_categories contains 'Agent'" %}
   {% assign raw_posts = raw_posts_main | concat: raw_posts_extra %}
   {% assign raw_posts = raw_posts | where_exp: "item", "item.sub_category != '菜谱'" %}
   {% assign dated_posts = raw_posts | where_exp: "item", "item.date" | sort: "date" | reverse %}

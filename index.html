@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 周健的个人博客
+title: 周健的技术博客
 ---
 
 <style>
@@ -69,19 +69,20 @@ title: 周健的个人博客
 {% assign published_notes_count = published_notes | size %}
 {% assign total = published_posts | size | plus: published_notes_count %}
 {% assign notes_count = site.notes | where_exp: "item", "item.discipline != nil" | size %}
-{% assign research_count = site.notes | where: "main_category", "科研妙招" | size %}
-{% assign life_count = site.notes | where: "main_category", "生活攻略" | size %}
-{% assign essay_count = site.notes | where: "main_category", "随笔漫谈" | size | plus: published_posts.size %}
+{% assign llmrec_count = site.notes | where: "main_category", "LLM4Rec" | size %}
+{% assign agent_count = site.notes | where: "main_category", "Agent" | size %}
+{% assign paper_count = site.notes | where: "main_category", "论文阅读" | size %}
+{% assign essay_count = site.notes | where: "main_category", "技术随笔" | size | plus: published_posts.size %}
 
 <section class="bio-section" style="margin-bottom: 3rem;">
   <h1>关于这里</h1>
   <p style="margin-bottom: 1.5rem;">
-    这里是周健的个人博客以及碎碎念，后续会存放学习资料，科研记录，随笔文章。
+    这里是周健的技术博客，主要记录 LLM、LLM4Rec、Agent 相关的学习笔记、论文阅读、工程实践和实验复盘。
   </p>
 
   <div style="font-size: 0.88rem; color: var(--color-muted); margin: 1.2rem 0 0; display: flex; gap: 1.8rem;">
     <span>📝 {{ total }} 份内容</span>
-    <span>🗂 4 个分类</span>
+    <span>🗂 5 个分类</span>
   </div>
 </section>
 
@@ -90,28 +91,35 @@ title: 周健的个人博客
     <a href="{{ '/notes/' | relative_url }}" class="cat-card">
       <span class="cat-icon">📚</span>
       <div>
-        <div class="cat-name">学习资料</div>
-        <div class="cat-count">{{ notes_count }} 份资料</div>
+        <div class="cat-name">LLM 笔记</div>
+        <div class="cat-count">{{ notes_count }} 份笔记</div>
       </div>
     </a>
     <a href="{{ '/research/' | relative_url }}" class="cat-card">
-      <span class="cat-icon">🔬</span>
+      <span class="cat-icon">🧠</span>
       <div>
-        <div class="cat-name">科研妙招</div>
-        <div class="cat-count">{{ research_count }} 篇文章</div>
+        <div class="cat-name">LLM4Rec</div>
+        <div class="cat-count">{{ llmrec_count }} 篇文章</div>
       </div>
     </a>
     <a href="{{ '/life/' | relative_url }}" class="cat-card">
-      <span class="cat-icon">☕</span>
+      <span class="cat-icon">🤖</span>
       <div>
-        <div class="cat-name">生活攻略</div>
-        <div class="cat-count">{{ life_count }} 篇文章</div>
+        <div class="cat-name">Agent</div>
+        <div class="cat-count">{{ agent_count }} 篇文章</div>
+      </div>
+    </a>
+    <a href="{{ '/papers/' | relative_url }}" class="cat-card">
+      <span class="cat-icon">📄</span>
+      <div>
+        <div class="cat-name">论文阅读</div>
+        <div class="cat-count">{{ paper_count }} 篇笔记</div>
       </div>
     </a>
     <a href="{{ '/essays/' | relative_url }}" class="cat-card">
       <span class="cat-icon">✍️</span>
       <div>
-        <div class="cat-name">随笔漫谈</div>
+        <div class="cat-name">技术随笔</div>
         <div class="cat-count">{{ essay_count }} 篇文章</div>
       </div>
     </a>

@@ -542,12 +542,14 @@
     <div class="nav-inner">
       <div class="nav-left-zone">
         {% if page.layout == "post" or page.collection == "notes" %}
-          {% if page.main_category == "科研妙招" %}
-            <a href="{{ site.baseurl }}/research/" class="nav-back">← 科研妙招</a>
-          {% elsif page.main_category == "生活攻略" %}
-            <a href="{{ site.baseurl }}/life/" class="nav-back">← 生活攻略</a>
-          {% elsif page.main_category == "随笔漫谈" %}
-            <a href="{{ site.baseurl }}/essays/" class="nav-back">← 随笔漫谈</a>
+          {% if page.main_category == "LLM4Rec" %}
+            <a href="{{ site.baseurl }}/research/" class="nav-back">← LLM4Rec</a>
+          {% elsif page.main_category == "Agent" %}
+            <a href="{{ site.baseurl }}/life/" class="nav-back">← Agent</a>
+          {% elsif page.main_category == "论文阅读" %}
+            <a href="{{ site.baseurl }}/papers/" class="nav-back">← 论文阅读</a>
+          {% elsif page.main_category == "技术随笔" %}
+            <a href="{{ site.baseurl }}/essays/" class="nav-back">← 技术随笔</a>
           {% elsif page.material_type == "课程测评" %}
             <a href="{{ site.baseurl }}/notes/course-reviews/" class="nav-back">← 课程测评</a>
           {% elsif page.discipline == "语言考试" %}
@@ -557,7 +559,7 @@
           {% elsif page.sub_category == "菜谱" %}
             <a href="{{ site.baseurl }}/life/recipes/" class="nav-back">← 菜谱专区</a>
           {% else %}
-            <a href="{{ site.baseurl }}/notes/" class="nav-back">← 学习资料</a>
+            <a href="{{ site.baseurl }}/notes/" class="nav-back">← LLM 笔记</a>
           {% endif %}
         {% else %}
           <!-- 未来有自己的学术网站时，填写 _config.yml 里的 entry_link.url，并取消下一行注释。 -->
@@ -571,10 +573,11 @@
 
       <ul class="nav-links">
         <li><a href="{{ site.baseurl }}/">首页</a></li>
-        <li><a href="{{ site.baseurl }}/notes/">学习资料</a></li>
-        <li><a href="{{ site.baseurl }}/research/">科研妙招</a></li>
-        <li><a href="{{ site.baseurl }}/life/">生活攻略</a></li>
-        <li><a href="{{ site.baseurl }}/essays/">随笔漫谈</a></li>
+        <li><a href="{{ site.baseurl }}/notes/">LLM 笔记</a></li>
+        <li><a href="{{ site.baseurl }}/research/">LLM4Rec</a></li>
+        <li><a href="{{ site.baseurl }}/life/">Agent</a></li>
+        <li><a href="{{ site.baseurl }}/papers/">论文阅读</a></li>
+        <li><a href="{{ site.baseurl }}/essays/">技术随笔</a></li>
       </ul>
 
       <div class="nav-right-box" style="display: flex; align-items: center; gap: 1rem;">
@@ -587,7 +590,7 @@
             <span class="search-icon">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
             </span>
-            <input type="text" id="search-input" placeholder="搜索文章或笔记...">
+            <input type="text" id="search-input" placeholder="搜索技术文章或笔记...">
             <button id="close-search-btn" onclick="toggleMobileSearch()">✕</button>
           </div>
 

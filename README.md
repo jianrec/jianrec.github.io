@@ -1,6 +1,6 @@
-# 周健的个人博客
+# 周健的技术博客
 
-这是一个基于 Jekyll 和 GitHub Pages 的免费托管个人博客，包含首页、栏目页、搜索、文章布局和 GitHub Actions 自动部署流程。
+这是一个基于 Jekyll 和 GitHub Pages 的技术博客，主要记录 LLM、LLM4Rec、Agent、论文阅读和技术随笔。
 
 当前站点结构基于已授权的 `zirconeey.github.io` 源码整理，已移除对方文章、个人信息、文件资源和评论服务配置。
 

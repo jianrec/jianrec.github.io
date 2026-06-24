@@ -10,7 +10,7 @@ layout: null
     {%- if item.main_category -%}
       {%- assign cat_str = item.main_category -%}
     {%- elsif item.discipline -%}
-      {%- assign cat_str = "学习资料" -%}
+      {%- assign cat_str = "LLM 笔记" -%}
     {%- endif -%}
 
     {%- if item.discipline -%}

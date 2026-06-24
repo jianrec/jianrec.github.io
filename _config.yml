@@ -1,5 +1,5 @@
-title: 周健的个人博客
-description: 个人文章、学习资料和长期笔记存档
+title: 周健的技术博客
+description: LLM、LLM4Rec、Agent 与论文阅读笔记
 url: "https://jianrec.github.io"
 baseurl: ""
 lang: "zh-CN"
@@ -41,7 +41,7 @@ defaults:
     values:
       layout: "post"
       author: "周健"
-      main_category: "随笔漫谈"
+      main_category: "技术随笔"
   - scope:
       path: ""
       type: "notes"

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "学习资料"
+title: "LLM 笔记"
 ---
 
 <style>
@@ -42,12 +42,12 @@ title: "学习资料"
 
 <article class="kb-page-wrap">
   <header class="kb-header">
-    <h1>学习资料</h1>
-    <p>Academic Archives &amp; Knowledge Base</p>
+    <h1>LLM 笔记</h1>
+    <p>LLM / Agent Learning Notes</p>
   </header>
 
   <div class="knowledge-base">
-    {% assign main_buckets = "AI|其他" | split: "|" %}
+    {% assign main_buckets = "LLM|LLM4Rec|Agent|其他" | split: "|" %}
 
     {% for bucket in main_buckets %}
       <details class="discipline-block">
@@ -64,8 +64,10 @@ title: "学习资料"
               {% assign fn_disc = first_note.discipline | default: "未分类" %}
 
               {% assign render_here = false %}
-              {% if bucket == "AI" and fn_disc == "AI" %}{% assign render_here = true %}{% endif %}
-              {% if bucket == "其他" and fn_disc != "AI" and fn_disc != "思政" %}{% assign render_here = true %}{% endif %}
+              {% if bucket == "LLM" and fn_disc == "LLM" %}{% assign render_here = true %}{% endif %}
+              {% if bucket == "LLM4Rec" and fn_disc == "LLM4Rec" %}{% assign render_here = true %}{% endif %}
+              {% if bucket == "Agent" and fn_disc == "Agent" %}{% assign render_here = true %}{% endif %}
+              {% if bucket == "其他" and fn_disc != "LLM" and fn_disc != "LLM4Rec" and fn_disc != "Agent" and fn_disc != "思政" %}{% assign render_here = true %}{% endif %}
 
               {% if render_here %}
                 <details class="course-block">
