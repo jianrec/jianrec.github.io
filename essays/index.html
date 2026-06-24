@@ -10,7 +10,8 @@ title: 技术随笔
 
   {% assign raw_posts_main  = site.notes | where: "main_category", "技术随笔" %}
   {% assign raw_posts_extra = site.notes | where_exp: "item", "item.extra_categories contains '技术随笔'" %}
-  {% assign raw_posts = raw_posts_main | concat: raw_posts_extra %}
+  {% assign raw_blog_posts = site.posts | where: "main_category", "技术随笔" %}
+  {% assign raw_posts = raw_posts_main | concat: raw_posts_extra | concat: raw_blog_posts %}
   {% assign dated_posts = raw_posts | where_exp: "item", "item.date" | sort: "date" | reverse %}
   {% assign undated_posts = raw_posts | where_exp: "item", "item.date == nil" %}
   {% assign category_posts = dated_posts | concat: undated_posts %}
