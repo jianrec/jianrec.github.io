@@ -543,23 +543,15 @@
       <div class="nav-left-zone">
         {% if page.layout == "post" or page.collection == "notes" %}
           {% if page.main_category == "LLM4Rec" %}
-            <a href="{{ site.baseurl }}/research/" class="nav-back">← LLM4Rec</a>
+            <a href="{{ site.baseurl }}/llmrec/" class="nav-back">← LLM4Rec</a>
           {% elsif page.main_category == "Agent" %}
-            <a href="{{ site.baseurl }}/life/" class="nav-back">← Agent</a>
+            <a href="{{ site.baseurl }}/agent/" class="nav-back">← Agent</a>
           {% elsif page.main_category == "论文阅读" %}
             <a href="{{ site.baseurl }}/papers/" class="nav-back">← 论文阅读</a>
           {% elsif page.main_category == "技术随笔" %}
             <a href="{{ site.baseurl }}/essays/" class="nav-back">← 技术随笔</a>
-          {% elsif page.material_type == "课程测评" %}
-            <a href="{{ site.baseurl }}/notes/course-reviews/" class="nav-back">← 课程测评</a>
-          {% elsif page.discipline == "语言考试" %}
-            <a href="{{ site.baseurl }}/notes/toefl-gre/" class="nav-back">← TOEFL &amp; GRE</a>
-          {% elsif page.discipline == "初升高" %}
-            <a href="{{ site.baseurl }}/notes/pre-high-school/" class="nav-back">← 初升高衔接</a>
-          {% elsif page.sub_category == "菜谱" %}
-            <a href="{{ site.baseurl }}/life/recipes/" class="nav-back">← 菜谱专区</a>
           {% else %}
-            <a href="{{ site.baseurl }}/notes/" class="nav-back">← LLM 笔记</a>
+            <a href="{{ site.baseurl }}/notes/" class="nav-back">← LLM</a>
           {% endif %}
         {% else %}
           <!-- 未来有自己的学术网站时，填写 _config.yml 里的 entry_link.url，并取消下一行注释。 -->
@@ -573,9 +565,9 @@
 
       <ul class="nav-links">
         <li><a href="{{ site.baseurl }}/">首页</a></li>
-        <li><a href="{{ site.baseurl }}/notes/">LLM 笔记</a></li>
-        <li><a href="{{ site.baseurl }}/research/">LLM4Rec</a></li>
-        <li><a href="{{ site.baseurl }}/life/">Agent</a></li>
+        <li><a href="{{ site.baseurl }}/notes/">LLM</a></li>
+        <li><a href="{{ site.baseurl }}/llmrec/">LLM4Rec</a></li>
+        <li><a href="{{ site.baseurl }}/agent/">Agent</a></li>
         <li><a href="{{ site.baseurl }}/papers/">论文阅读</a></li>
         <li><a href="{{ site.baseurl }}/essays/">技术随笔</a></li>
       </ul>

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "LLM 笔记"
+title: "LLM"
 ---
 
 <style>
@@ -29,7 +29,7 @@ title: "LLM 笔记"
     color: var(--color-accent); border-bottom-color: var(--color-accent);
   }
 
-  /* 手机端：让笔记与课程名对齐 (课程文字≈2.8rem，笔记文字≈3.1rem 稍微缩进一点) */
+  /* 手机端：让笔记与课程名对齐 */
   @media (max-width: 768px) {
     .kb-page-wrap { padding: 1rem 0.5rem; }
     .knowledge-base summary { padding: 0.7rem !important; }
@@ -42,7 +42,7 @@ title: "LLM 笔记"
 
 <article class="kb-page-wrap">
   <header class="kb-header">
-    <h1>LLM 笔记</h1>
+    <h1>LLM</h1>
     <p>LLM / Agent Learning Notes</p>
   </header>
 
@@ -58,7 +58,7 @@ title: "LLM 笔记"
           {% for folder in site.study_order %}
             {% assign match_path = "/" | append: folder | append: "/" %}
             {% assign raw_folder_notes = site.notes | where_exp: "n", "n.path contains match_path" %}
-            {% assign folder_notes = raw_folder_notes | where_exp: "n", "n.material_type != '课程测评'" %}
+            {% assign folder_notes = raw_folder_notes %}
             {% if folder_notes.size > 0 %}
               {% assign first_note = folder_notes[0] %}
               {% assign fn_disc = first_note.discipline | default: "未分类" %}
@@ -99,7 +99,7 @@ title: "LLM 笔记"
             {% for folder in site.study_order %}
               {% assign match_path = "/" | append: folder | append: "/" %}
               {% assign raw_folder_notes = site.notes | where_exp: "n", "n.path contains match_path" %}
-              {% assign folder_notes = raw_folder_notes | where_exp: "n", "n.material_type != '课程测评'" %}
+              {% assign folder_notes = raw_folder_notes %}
               {% if folder_notes.size > 0 %}
                 {% assign first_note = folder_notes[0] %}
                 {% if first_note.discipline == "思政" %}
@@ -132,39 +132,4 @@ title: "LLM 笔记"
       </details>
     {% endfor %}
   </div>
-
-  <!--
-  <div class="kb-subentries" style="margin-top: 3rem; text-align: center; display: flex; flex-wrap: wrap; gap: 0.8rem; justify-content: center;">
-    <a href="{{ '/notes/toefl-gre/' | relative_url }}"
-       style="display: inline-block; padding: 0.6rem 1.4rem;
-              border: 1px solid var(--color-border); border-radius: 999px;
-              color: var(--color-accent); text-decoration: none;
-              font-size: 1rem; letter-spacing: 0.02em;
-              transition: all 0.2s;"
-       onmouseover="this.style.background='var(--color-bg-warm)'; this.style.borderColor='var(--color-accent)';"
-       onmouseout="this.style.background=''; this.style.borderColor='var(--color-border)';">
-      🎯 TOEFL &amp; GRE 专区 →
-    </a>
-    <a href="{{ '/notes/course-reviews/' | relative_url }}"
-       style="display: inline-block; padding: 0.6rem 1.4rem;
-              border: 1px solid var(--color-border); border-radius: 999px;
-              color: var(--color-accent); text-decoration: none;
-              font-size: 1rem; letter-spacing: 0.02em;
-              transition: all 0.2s;"
-       onmouseover="this.style.background='var(--color-bg-warm)'; this.style.borderColor='var(--color-accent)';"
-       onmouseout="this.style.background=''; this.style.borderColor='var(--color-border)';">
-      📝 课程测评专区 →
-    </a>
-    <a href="{{ '/notes/pre-high-school/' | relative_url }}"
-       style="display: inline-block; padding: 0.6rem 1.4rem;
-              border: 1px solid var(--color-border); border-radius: 999px;
-              color: var(--color-accent); text-decoration: none;
-              font-size: 1rem; letter-spacing: 0.02em;
-              transition: all 0.2s;"
-       onmouseover="this.style.background='var(--color-bg-warm)'; this.style.borderColor='var(--color-accent)';"
-       onmouseout="this.style.background=''; this.style.borderColor='var(--color-border)';">
-      🏫 高中辅导 →
-    </a>
-  </div>
-  -->
 </article>

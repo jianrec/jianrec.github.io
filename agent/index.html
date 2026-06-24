@@ -11,7 +11,6 @@ title: Agent
   {% assign raw_posts_main  = site.notes | where: "main_category", "Agent" %}
   {% assign raw_posts_extra = site.notes | where_exp: "item", "item.extra_categories contains 'Agent'" %}
   {% assign raw_posts = raw_posts_main | concat: raw_posts_extra %}
-  {% assign raw_posts = raw_posts | where_exp: "item", "item.sub_category != '菜谱'" %}
   {% assign dated_posts = raw_posts | where_exp: "item", "item.date" | sort: "date" | reverse %}
   {% assign undated_posts = raw_posts | where_exp: "item", "item.date == nil" %}
   {% assign category_posts = dated_posts | concat: undated_posts %}
@@ -27,22 +26,6 @@ title: Agent
   {% if no_sub_posts.size > 0 %}
     {% include sub-category-section.html sub="其他" posts=no_sub_posts %}
   {% endif %}
-
-  {% comment %}
-  未来如果需要恢复菜谱专区，取消这一段注释。
-  <div class="kb-subentries" style="margin-top: 3rem; text-align: center; display: flex; flex-wrap: wrap; gap: 0.8rem; justify-content: center;">
-    <a href="{{ '/life/recipes/' | relative_url }}"
-       style="display: inline-block; padding: 0.6rem 1.4rem;
-              border: 1px solid var(--color-border); border-radius: 999px;
-              color: var(--color-accent); text-decoration: none;
-              font-size: 1rem; letter-spacing: 0.02em;
-              transition: all 0.2s;"
-       onmouseover="this.style.background='var(--color-bg-warm)'; this.style.borderColor='var(--color-accent)';"
-       onmouseout="this.style.background=''; this.style.borderColor='var(--color-border)';">
-      🍳 菜谱专区 →
-    </a>
-  </div>
-  {% endcomment %}
 </article>
 
 {% include category-listing-tools.html %}
