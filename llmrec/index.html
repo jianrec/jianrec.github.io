@@ -24,7 +24,7 @@ title: LLM4Rec
 
   {% assign no_sub_posts = category_posts | where_exp: "item", "item.sub_category == nil" %}
   {% if no_sub_posts.size > 0 %}
-    {% include sub-category-section.html sub="其他" posts=no_sub_posts %}
+    {% include sub-category-section.html sub="比赛" posts=no_sub_posts %}
   {% endif %}
 </article>
 
