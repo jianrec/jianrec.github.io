@@ -1,6 +1,6 @@
 ---
 title: "MiniOneRec 项目面试复习：从 Semantic ID 到 GRPO 的生成式推荐闭环"
-date: 2026-06-25 21:55:00 +0800
+date: 2026-06-25 21:30:00 +0800
 tags: [MiniOneRec, 生成式推荐, LLM4Rec, Semantic ID, RQ-VAE, SFT, GRPO, 约束解码, HR, NDCG, 面试复习]
 main_category: "LLM4Rec"
 discipline: "LLM4Rec"
