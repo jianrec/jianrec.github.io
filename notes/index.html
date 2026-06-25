@@ -50,6 +50,50 @@ title: "LLM"
     {% assign main_buckets = "LLM|LLM4Rec|Agent|其他" | split: "|" %}
 
     {% for bucket in main_buckets %}
+      {% assign bucket_count = 0 %}
+      {% for folder in site.study_order %}
+        {% assign match_path = "/" | append: folder | append: "/" %}
+        {% assign raw_folder_notes = site.notes | where_exp: "n", "n.path contains match_path" %}
+        {% assign folder_notes = raw_folder_notes %}
+        {% if folder_notes.size > 0 %}
+          {% assign first_note = folder_notes[0] %}
+          {% assign fn_disc = first_note.discipline | default: "未分类" %}
+
+          {% assign render_here = false %}
+          {% if bucket == "LLM" and fn_disc == "LLM" %}{% assign render_here = true %}{% endif %}
+          {% if bucket == "LLM4Rec" and fn_disc == "LLM4Rec" %}{% assign render_here = true %}{% endif %}
+          {% if bucket == "Agent" and fn_disc == "Agent" %}{% assign render_here = true %}{% endif %}
+          {% if bucket == "其他" and fn_disc != "LLM" and fn_disc != "LLM4Rec" and fn_disc != "Agent" and fn_disc != "思政" %}{% assign render_here = true %}{% endif %}
+
+          {% if render_here %}
+            {% for item in folder_notes %}
+              {% if item.published != false %}
+                {% assign bucket_count = bucket_count | plus: 1 %}
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+
+      {% if bucket == "其他" %}
+        {% for folder in site.study_order %}
+          {% assign match_path = "/" | append: folder | append: "/" %}
+          {% assign raw_folder_notes = site.notes | where_exp: "n", "n.path contains match_path" %}
+          {% assign folder_notes = raw_folder_notes %}
+          {% if folder_notes.size > 0 %}
+            {% assign first_note = folder_notes[0] %}
+            {% if first_note.discipline == "思政" %}
+              {% for item in folder_notes %}
+                {% if item.published != false %}
+                  {% assign bucket_count = bucket_count | plus: 1 %}
+                {% endif %}
+              {% endfor %}
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+
+      {% if bucket_count > 0 %}
       <details class="discipline-block">
         <summary class="discipline-title">{{ bucket }}</summary>
         <div class="discipline-content">
@@ -130,6 +174,7 @@ title: "LLM"
 
         </div>
       </details>
+      {% endif %}
     {% endfor %}
   </div>
 </article>

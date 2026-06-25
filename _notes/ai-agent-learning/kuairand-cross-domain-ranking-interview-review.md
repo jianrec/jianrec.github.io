@@ -5,6 +5,7 @@ tags: [KuaiRand, 推荐系统, 精排, DIN, 跨域推荐, 多兴趣, PSRG, PCRG,
 main_category: "LLM4Rec"
 discipline: "LLM4Rec"
 course: "KuaiRand 跨域精排"
+sub_category: "项目复盘"
 material_type: "项目复盘"
 description: "整理 KuaiRand 跨域多场景精排项目的业务问题、模型设计、消融口径和面试中容易被追问的点。"
 ---
