@@ -146,11 +146,13 @@ title: 周健的技术博客
 {% assign recent_items = dated_posts | concat: dated_notes | sort: "date" | reverse %}
 {% assign published_notes_count = published_notes | size %}
 {% assign total = published_posts | size | plus: published_notes_count %}
-{% assign notes_count = site.notes | where_exp: "item", "item.discipline != nil" | size %}
-{% assign llmrec_count = site.notes | where: "main_category", "LLM4Rec" | size %}
-{% assign agent_count = site.notes | where: "main_category", "Agent" | size %}
-{% assign paper_count = site.notes | where: "main_category", "论文阅读" | size %}
-{% assign essay_count = site.notes | where: "main_category", "技术随笔" | size | plus: published_posts.size %}
+{% assign llm_count = published_notes | where: "main_category", "LLM" | size %}
+{% assign llmrec_count = published_notes | where: "main_category", "LLM4Rec" | size %}
+{% assign agent_count = published_notes | where: "main_category", "Agent" | size %}
+{% assign paper_count = published_notes | where: "main_category", "论文阅读" | size %}
+{% assign essay_count = published_notes | where: "main_category", "技术随笔" | size | plus: published_posts.size %}
+{% assign visible_category_count = 4 %}
+{% if llm_count > 0 %}{% assign visible_category_count = visible_category_count | plus: 1 %}{% endif %}
 
 <section class="bio-section" style="margin-bottom: 3rem;">
   <h1>关于这里</h1>
@@ -160,19 +162,21 @@ title: 周健的技术博客
 
   <div style="font-size: 0.88rem; color: var(--color-muted); margin: 1.2rem 0 0; display: flex; gap: 1.8rem;">
     <span>📝 {{ total }} 份内容</span>
-    <span>🗂 5 个分类</span>
+    <span>🗂 {{ visible_category_count }} 个分类</span>
   </div>
 </section>
 
 <section style="margin-bottom: 3.5rem;">
   <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.85rem;">
+    {% if llm_count > 0 %}
     <a href="{{ '/notes/' | relative_url }}" class="cat-card">
       <span class="cat-icon">📚</span>
       <div>
         <div class="cat-name">LLM</div>
-        <div class="cat-count">{{ notes_count }} 份笔记</div>
+        <div class="cat-count">{{ llm_count }} 份笔记</div>
       </div>
     </a>
+    {% endif %}
     <a href="{{ '/llmrec/' | relative_url }}" class="cat-card">
       <span class="cat-icon">🧠</span>
       <div>

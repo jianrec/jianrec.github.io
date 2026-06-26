@@ -539,6 +539,7 @@
   {% endif %}
 </head>
 <body>
+  {% assign llm_nav_notes = site.notes | where: "main_category", "LLM" | where_exp: "item", "item.published != false" %}
 
   <nav>
     <div class="nav-inner">
@@ -567,7 +568,9 @@
 
       <ul class="nav-links">
         <li><a href="{{ site.baseurl }}/">首页</a></li>
+        {% if llm_nav_notes.size > 0 %}
         <li><a href="{{ site.baseurl }}/notes/">LLM</a></li>
+        {% endif %}
         <li><a href="{{ site.baseurl }}/llmrec/">LLM4Rec</a></li>
         <li><a href="{{ site.baseurl }}/agent/">Agent</a></li>
         <li><a href="{{ site.baseurl }}/papers/">论文阅读</a></li>
