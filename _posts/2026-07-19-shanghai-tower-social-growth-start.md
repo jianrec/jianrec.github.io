@@ -42,7 +42,7 @@ cover_position: "center"
 这不是否定过去的学习，而是一次诚实的盘点。它让我意识到，接下来不能只停留在“继续了解更多”，还要逼着自己把输入变成输出，把想法变成具体的东西。
 
 ![和朋友合影](/assets/images/social/2026-07-19-selfie-trio.jpeg)
-<p class="img-caption">每一次交流，都是一次重新认识自己位置的机会。</p>
+<p class="img-caption">从左至右：学长崔家豪、自动华老师、语核科技池光耀。</p>
 
 ## 向内求，也向外走
 
