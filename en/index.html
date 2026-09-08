@@ -1,0 +1,206 @@
+---
+layout: default
+title: "Jian Zhou"
+lang: en
+lang_alt: /
+permalink: /en/
+---
+
+<style>
+  .cat-card {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    padding: 1rem 1.2rem;
+    background: var(--color-bg-warm);
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--color-ink);
+    transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  }
+  .cat-card:hover {
+    border-color: var(--color-accent);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+    text-decoration: none;
+  }
+  .cat-icon { font-size: 1.5rem; line-height: 1; }
+  .cat-name { font-weight: 600; font-size: 1rem; color: var(--color-ink); }
+  .cat-count { font-size: 0.82rem; color: var(--color-muted); margin-top: 0.15rem; }
+
+  .recent-section { margin-bottom: 3.5rem; }
+  .section-title { font-size: 1.45rem; margin-bottom: 1rem; }
+  .recent-list { display: flex; flex-direction: column; }
+  .recent-item {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: start;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px dashed var(--color-border);
+    color: var(--color-text);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .recent-item:hover { text-decoration: none; }
+  .recent-main {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: baseline;
+    gap: 0.75rem;
+    min-width: 0;
+  }
+  .recent-meta { font-size: 0.78rem; }
+  .recent-tag {
+    display: inline-flex;
+    align-items: center;
+    max-width: 100%;
+    padding: 0.05rem 0.5rem;
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    background: var(--color-bg);
+    color: var(--color-accent);
+    line-height: 1.5;
+    white-space: nowrap;
+  }
+  .recent-title {
+    color: var(--color-ink);
+    font-weight: 600;
+    font-size: 1.08rem;
+    line-height: 1.45;
+  }
+  .recent-item:hover .recent-title { color: var(--color-accent); }
+  .recent-date {
+    align-self: start;
+    color: var(--color-light);
+    font-size: 0.82rem;
+    white-space: nowrap;
+  }
+
+  .edu-list { display: flex; flex-direction: column; gap: 1.4rem; margin-top: 1.4rem; }
+  .edu-item {
+    display: grid;
+    grid-template-columns: 190px minmax(0, 1fr);
+    gap: 1.4rem;
+    align-items: start;
+  }
+  .edu-period {
+    font-family: var(--font-display);
+    font-size: 0.92rem;
+    color: var(--color-muted);
+    letter-spacing: 0.02em;
+    padding-top: 0.15rem;
+    white-space: nowrap;
+  }
+  .edu-degree { font-weight: 600; color: var(--color-ink); font-size: 1.04rem; line-height: 1.5; }
+  .edu-school { color: var(--color-muted); font-size: 0.92rem; margin-top: 0.15rem; line-height: 1.6; }
+  .edu-current {
+    display: inline-block;
+    margin-left: 0.5rem;
+    padding: 0.02rem 0.45rem;
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    background: var(--color-bg-warm);
+    color: var(--color-accent);
+    font-size: 0.72rem;
+    font-weight: 500;
+    vertical-align: 0.12em;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 640px) {
+    .recent-item { grid-template-columns: 1fr; gap: 0.25rem; }
+    .recent-main { grid-template-columns: 1fr; gap: 0.35rem; }
+    .recent-date { justify-self: start; }
+    .edu-item { grid-template-columns: 1fr; gap: 0.3rem; }
+    .edu-period { padding-top: 0; }
+  }
+</style>
+
+{% assign en_all = site.en_notes | concat: site.en_posts %}
+{% assign published_en = en_all | where_exp: "item", "item.published != false" %}
+{% assign dated_en = published_en | where_exp: "item", "item.date" | sort: "date" | reverse %}
+{% assign total = published_en | size %}
+{% assign paper_count = published_en | where: "main_category", "Paper Reading" | size %}
+{% assign essay_count = published_en | where: "main_category", "Technical Notes" | size %}
+
+<section class="bio-section" style="margin-bottom: 3rem;">
+  <h1>About Me</h1>
+  <p style="margin-bottom: 1rem;">
+    My name is Jian Zhou. I am currently a second-year master's student at the School of
+    Mathematics, Harbin Institute of Technology, where I am fortunate to be advised by
+    Professor Zhichang Guo. I received my B.Eng. in Hydraulic and Hydropower Engineering
+    from Zhejiang University of Water Resources and Electric Power (ZJWEU) in 2025.
+  </p>
+
+  <h2 class="section-title" style="font-size: 1.15rem; margin-top: 1.8rem; margin-bottom: 0.6rem;">Research Interests</h2>
+  <ul style="margin: 0 0 0 1.2rem; padding: 0;">
+    <li>KV cache compression and reuse in large language model inference</li>
+  </ul>
+
+  <div style="font-size: 0.88rem; color: var(--color-muted); margin: 1.8rem 0 0; display: flex; gap: 1.8rem;">
+    <span>📝 {{ total }} entries</span>
+    <span>🗂 2 categories</span>
+  </div>
+</section>
+
+<section style="margin-bottom: 3.5rem;">
+  <h2 class="section-title">📖 Educations</h2>
+  <div class="edu-list">
+    <div class="edu-item">
+      <div class="edu-period">2025.09 - 2028.06</div>
+      <div>
+        <div class="edu-degree">
+          M.A.S. in Applied Statistics<span class="edu-current">Present</span>
+        </div>
+        <div class="edu-school">School of Mathematics, Harbin Institute of Technology</div>
+      </div>
+    </div>
+    <div class="edu-item">
+      <div class="edu-period">2021.09 - 2025.06</div>
+      <div>
+        <div class="edu-degree">B.Eng. in Hydraulic and Hydropower Engineering</div>
+        <div class="edu-school">College of Hydraulic and Hydropower Engineering, Zhejiang University of Water Resources and Electric Power</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="margin-bottom: 3.5rem;">
+  <h2 class="section-title">🗂 Categories</h2>
+  <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.85rem; margin-top: 1.2rem;">
+    <a href="{{ '/en/papers/' | relative_url }}" class="cat-card">
+      <span class="cat-icon">📄</span>
+      <div>
+        <div class="cat-name">Paper Reading</div>
+        <div class="cat-count">{{ paper_count }} notes · incl. LLM4Rec & Agent</div>
+      </div>
+    </a>
+    <a href="{{ '/en/essays/' | relative_url }}" class="cat-card">
+      <span class="cat-icon">✍️</span>
+      <div>
+        <div class="cat-name">Technical Notes</div>
+        <div class="cat-count">{{ essay_count }} articles</div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section class="recent-section">
+  <h2 class="section-title">📝 Recent Updates</h2>
+  <div class="recent-list">
+    {% for item in dated_en limit: 6 %}
+      {% assign item_label = item.main_category | default: "Update" %}
+      <a href="{{ item.url | relative_url }}" class="recent-item">
+        <div class="recent-main">
+          <div class="recent-meta">
+            <span class="recent-tag">{{ item_label }}</span>
+          </div>
+          <div class="recent-title">{{ item.title }}</div>
+        </div>
+        <time class="recent-date" datetime="{{ item.date | date_to_xmlschema }}">{{ item.date | date: "%Y-%m-%d" }}</time>
+      </a>
+    {% endfor %}
+  </div>
+</section>

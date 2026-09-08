@@ -1,0 +1,23 @@
+---
+layout: null
+permalink: /search-en.json
+---
+[
+  {%- assign all_items = site.en_posts | concat: site.en_notes -%}
+  {%- assign published_items = all_items | where_exp: "item", "item.published != false" -%}
+  {%- for item in published_items -%}
+    {%- assign cat_str = "" -%}
+    {%- if item.main_category -%}
+      {%- assign cat_str = item.main_category -%}
+      {%- if item.sub_category -%}
+        {%- assign cat_str = cat_str | append: " · " | append: item.sub_category -%}
+      {%- endif -%}
+    {%- endif -%}
+    {
+      "title": {{ item.title | jsonify }},
+      "category": {{ cat_str | jsonify }},
+      "url": {{ item.url | relative_url | jsonify }},
+      "content": {{ item.content | strip_html | strip_newlines | truncate: 200 | jsonify }}
+      }{%- unless forloop.last -%},{%- endunless -%}
+  {%- endfor -%}
+]

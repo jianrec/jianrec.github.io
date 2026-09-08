@@ -701,9 +701,9 @@
       SimpleJekyllSearch({
         searchInput: document.getElementById('search-input'),
         resultsContainer: document.getElementById('results-container'),
-        json: '{{ site.baseurl }}/search.json',
+        json: '{{ site.baseurl }}{% if page.lang == "en" %}/search-en.json{% else %}/search.json{% endif %}',
         searchResultTemplate: '<li style="padding: 0.8rem; border-bottom: 1px solid var(--color-border);"><a href="{url}" style="text-decoration: none; color: var(--color-accent); font-weight: 500; font-size: 0.95rem; display: block;">{title}</a><span style="font-size: 0.8rem; color: var(--color-muted);">{category}</span></li>',
-        noResultsText: '<li style="padding: 1rem; text-align: center; color: var(--color-muted);">没有找到相关内容 🥲</li>'
+        noResultsText: '<li style="padding: 1rem; text-align: center; color: var(--color-muted);">{% if page.lang == "en" %}No results found 🥲{% else %}没有找到相关内容 🥲{% endif %}</li>'
       });
 
       // 当输入框有内容时显示结果，失去焦点时隐藏

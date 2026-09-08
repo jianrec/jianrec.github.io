@@ -44,6 +44,12 @@ collections:
   notes:
     output: true
     permalink: /notes/:path/
+  en_notes:
+    output: true
+    permalink: /en/notes/:path/
+  en_posts:
+    output: true
+    permalink: /en/posts/:path/
 
 defaults:
   - scope:
@@ -53,12 +59,29 @@ defaults:
       layout: "post"
       author: "周健"
       main_category: "技术随笔"
+      lang: "zh"
   - scope:
       path: ""
       type: "notes"
     values:
       layout: "post"
       author: "周健"
+      lang: "zh"
+  - scope:
+      path: ""
+      type: "en_posts"
+    values:
+      layout: "post"
+      author: "Jian Zhou"
+      main_category: "Technical Notes"
+      lang: "en"
+  - scope:
+      path: ""
+      type: "en_notes"
+    values:
+      layout: "post"
+      author: "Jian Zhou"
+      lang: "en"
 
 study_order:
   - ai-agent-learning

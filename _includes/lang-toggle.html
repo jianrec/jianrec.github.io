@@ -1,0 +1,29 @@
+{%- comment -%}
+语言切换按钮。逻辑：
+  - 用 page.ref 在 zh / en 两套集合里互查对应文章；找到就跳过去。
+  - 栏目页/首页用 page.lang_alt 显式指定对端 URL。
+  - 都没有时，退回到对端语言的首页，避免出现死链。
+{%- endcomment -%}
+{%- assign _cur = page.lang | default: "zh" -%}
+
+{%- if page.lang_alt -%}
+  {%- assign _target = page.lang_alt -%}
+{%- elsif page.ref -%}
+  {%- if _cur == "zh" -%}
+    {%- assign _pool = site.en_notes | concat: site.en_posts -%}
+  {%- else -%}
+    {%- assign _pool = site.notes | concat: site.posts -%}
+  {%- endif -%}
+  {%- assign _match = _pool | where: "ref", page.ref | first -%}
+  {%- if _match -%}{%- assign _target = _match.url -%}{%- endif -%}
+{%- endif -%}
+
+{%- unless _target -%}
+  {%- if _cur == "zh" -%}{%- assign _target = "/en/" -%}{%- else -%}{%- assign _target = "/" -%}{%- endif -%}
+{%- endunless -%}
+
+<a class="lang-toggle" href="{{ _target | relative_url }}"
+   title="{% if _cur == 'zh' %}Switch to English{% else %}切换到中文{% endif %}"
+   aria-label="{% if _cur == 'zh' %}Switch to English{% else %}切换到中文{% endif %}">
+  {% if _cur == "zh" %}EN{% else %}中{% endif %}
+</a>

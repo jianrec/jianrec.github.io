@@ -1,0 +1,32 @@
+---
+layout: default
+title: Paper Reading
+lang: en
+lang_alt: /papers/
+permalink: /en/papers/
+---
+<article style="max-width: 800px; margin: 0 auto; padding: 2rem 1rem;">
+  <header style="margin-bottom: 3rem; text-align: center;">
+    <h1 style="font-size: 2.2rem; color: var(--color-ink); margin-bottom: 1rem;">Paper Reading</h1>
+    <p style="color: var(--color-light); font-style: italic;">Paper Reading Notes · LLM4Rec & Agent</p>
+  </header>
+
+  {% assign raw_posts = site.en_notes | where: "main_category", "Paper Reading" %}
+  {% assign dated_posts = raw_posts | where_exp: "item", "item.date" | sort: "date" | reverse %}
+  {% assign undated_posts = raw_posts | where_exp: "item", "item.date == nil" %}
+  {% assign category_posts = dated_posts | concat: undated_posts %}
+
+  {% assign sub_categories = category_posts | map: "sub_category" | compact | uniq %}
+
+  {% for sub in sub_categories %}
+    {% assign sub_posts = category_posts | where: "sub_category", sub %}
+    {% include sub-category-section.html sub=sub posts=sub_posts %}
+  {% endfor %}
+
+  {% assign no_sub_posts = category_posts | where_exp: "item", "item.sub_category == nil" %}
+  {% if no_sub_posts.size > 0 %}
+    {% include sub-category-section.html sub="Other" posts=no_sub_posts %}
+  {% endif %}
+</article>
+
+{% include category-listing-tools.html %}

@@ -426,7 +426,11 @@ layout: default
 {% endif %}
 
 <div style="margin-top: 4rem; text-align: center;">
+  {% if page.lang == "en" %}
+  <a href="{{ site.baseurl }}/en/" style="color: var(--color-muted); text-decoration: none;">← Back to home</a>
+  {% else %}
   <a href="{{ site.baseurl }}/" style="color: var(--color-muted); text-decoration: none;">← 返回首页</a>
+  {% endif %}
 </div>
 
 </article>
