@@ -633,11 +633,16 @@
   </main>
 
   <footer>
-    &copy; {{ site.time | date: "%Y" }} {{ site.author.name }}.
+    &copy; {{ site.time | date: "%Y" }} {% if page.lang == "en" %}{{ site.author.name_en | default: "Jian Zhou" }}{% else %}{{ site.author.name }}{% endif %}.
     {% if site.traffic.busuanzi %}
     <div class="site-stats">
+      {% if page.lang == "en" %}
+      <span id="busuanzi_container_site_pv"><span id="busuanzi_value_site_pv">...</span> views</span>
+      <span id="busuanzi_container_site_uv"><span id="busuanzi_value_site_uv">...</span> visitors</span>
+      {% else %}
       <span id="busuanzi_container_site_pv">访问 <span id="busuanzi_value_site_pv">...</span> 次</span>
       <span id="busuanzi_container_site_uv">访客 <span id="busuanzi_value_site_uv">...</span> 人</span>
+      {% endif %}
     </div>
     {% endif %}
   </footer>
