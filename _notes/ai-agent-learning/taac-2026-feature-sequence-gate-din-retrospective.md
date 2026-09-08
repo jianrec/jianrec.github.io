@@ -8,6 +8,7 @@ discipline: "LLM4Rec"
 course: "TAAC-2026"
 material_type: "竞赛复盘"
 description: "整理 TAAC-2026 项目中围绕 sparse-dense pair、dense 拆分、时间特征、sequence gate、DIN target-aware 分支和训练稳定性的设计复盘。"
+ref: "taac-2026-feature-sequence-gate-din-retrospective"
 ---
 
 上一篇文章记录了我在 TAAC-2026 baseline 上做过哪些模块改造。这篇更偏“为什么这么改”：PCVR 任务里的稀疏性到底体现在哪些地方，为什么没有直接复刻更重的统一 Transformer 路线，以及我怎么在 HyFormer 框架里补上 pair 特征、时间信号和候选相关兴趣。

@@ -9,6 +9,7 @@ course: "TAAC-2026"
 material_type: "Competition Retrospective"
 description: "A record of the main changes the TAAC-2026 code makes relative to the baseline, the current scores, and the ablation directions to follow."
 lang: en
+ref: "taac-2026-baseline-improvements"
 ---
 
 This post records the main changes I made to the TAAC-2026 code on top of the official baseline, and puts the current scores up front so they are easy to look back at. "Official baseline" here refers to the original `baseline/train` code shipped with the competition; `0.8289*` is the score after the first round of improvements on the official baseline, not the score of the baseline itself.

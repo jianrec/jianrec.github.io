@@ -7,7 +7,7 @@ discipline: "Other"
 course: "Git"
 material_type: "Study Notes"
 description: "Everyday Git commands organized along a few main threads: the working tree, the staging area, the local repository, remotes, and branch collaboration."
-ref: git-common-commands-and-workflow
+ref: "git-common-commands-and-workflow"
 lang: en
 ---
 

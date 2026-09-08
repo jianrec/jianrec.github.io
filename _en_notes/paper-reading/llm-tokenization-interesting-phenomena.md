@@ -8,7 +8,7 @@ discipline: "LLM"
 course: "Paper Reading"
 material_type: "Paper Notes"
 description: "Notes on why large models need a tokenizer, mainstream subword algorithms, vocabulary size trade-offs, low-frequency token generation failures, and what tokenization suggests for recommender systems."
-ref: llm-tokenization-interesting-phenomena
+ref: "llm-tokenization-interesting-phenomena"
 lang: en
 ---
 

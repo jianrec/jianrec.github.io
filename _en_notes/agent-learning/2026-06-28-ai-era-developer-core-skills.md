@@ -9,6 +9,7 @@ course: "AI Coding"
 material_type: "Video Notes"
 description: "Notes on the Google for Developers talk Build core skills to thrive as an AI-era developer: the core capability of an AI-era developer is not writing code faster, but clarifying intent, designing systems, validating output, and organizing feedback."
 lang: en
+ref: "ai-era-developer-core-skills"
 ---
 
 > Original PDF: [Open the PDF]({{ '/assets/pdfs/ai-era-developer-core-skills.pdf' | relative_url }})

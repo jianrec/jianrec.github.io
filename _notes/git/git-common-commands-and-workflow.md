@@ -7,6 +7,7 @@ discipline: "其他"
 course: "Git"
 material_type: "学习笔记"
 description: "从工作区、暂存区、本地仓库、远程仓库和分支协作几条主线整理 Git 日常命令。"
+ref: "git-common-commands-and-workflow"
 ---
 
 学 Git 不能只背命令。真正容易混的是：文件现在在哪一层、下一步要把它放到哪里、这条命令会不会丢东西。

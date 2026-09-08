@@ -9,6 +9,7 @@ course: "learn-claude-code"
 material_type: "Comprehensive Review"
 description: "A comprehensive review of learn-claude-code s01-s20: from a minimal Agent Loop to tools, permissions, hooks, memory, teams, worktrees, MCP, and a complete coding agent harness."
 lang: en
+ref: "learn-claude-code-s01-s20-comprehensive-review"
 ---
 
 Created: 2026-06-28  

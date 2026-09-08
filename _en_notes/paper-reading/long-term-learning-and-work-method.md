@@ -8,7 +8,7 @@ discipline: "Paper Reading"
 course: "Paper Reading"
 material_type: "Learning Method Summary"
 description: "From building a literature base, reading papers in multiple passes and strengthening long-term memory, to choosing important work and environments that foster growth — a sustainable approach to learning and working."
-ref: long-term-learning-and-work-method
+ref: "long-term-learning-and-work-method"
 lang: en
 ---
 

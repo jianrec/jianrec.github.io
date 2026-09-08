@@ -9,6 +9,7 @@ sub_category: "LLM4Rec · Project Retrospective"
 material_type: "Interview Review"
 description: "How I present the MiniOneRec reproduction project in interviews: turning sequential recommendation into LLM generation of Semantic IDs, doing SFT, GRPO, and constrained beam search, and how to defend the metrics and the boundaries of my contribution."
 lang: en
+ref: "minionerec-generative-recommendation-interview-review"
 ---
 
 This is the interview review script I prepared for the MiniOneRec project. It is neither a paper summary nor an API guide; it is organized the way I would present it in an interview: state the problem first, then string SID construction, SFT, GRPO, constrained decoding, and metric defense into one complete chain.

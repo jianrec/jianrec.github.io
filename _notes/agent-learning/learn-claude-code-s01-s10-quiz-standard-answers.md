@@ -8,6 +8,7 @@ discipline: "Agent"
 course: "learn-claude-code"
 material_type: "Quiz 笔记"
 description: "整理 learn-claude-code s01-s10 的 quiz 标准答案，覆盖 agent loop、多工具、权限、hooks、todo、subagent、skill loading、context compact、memory 和动态 system prompt。"
+ref: "learn-claude-code-s01-s10-quiz-standard-answers"
 ---
 
 ## 0. 总览

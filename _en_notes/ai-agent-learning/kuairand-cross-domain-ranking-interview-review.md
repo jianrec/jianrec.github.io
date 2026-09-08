@@ -9,6 +9,7 @@ sub_category: "LLM4Rec · Project Retrospective"
 material_type: "Project Retrospective"
 description: "A consolidated write-up of the business problem, model design, ablation protocol, and the follow-up questions most likely to come up in interviews for the KuaiRand cross-domain multi-scenario ranking project."
 lang: en
+ref: "kuairand-cross-domain-ranking-interview-review"
 ---
 
 These notes are for reviewing the KuaiRand-27K multi-scenario ranking project. When I talk about this project in an interview, I don't want to start by piling up module names — I want to state the problem clearly first: the user's history comes from multiple tabs, the current prediction happens in one specific tab, and the data distributions behind different tabs are not the same.

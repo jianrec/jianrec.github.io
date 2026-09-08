@@ -8,6 +8,7 @@ discipline: "LLM"
 course: "论文阅读"
 material_type: "论文笔记"
 description: "整理大模型 tokenizer 的必要性、主流子词算法、词表规模权衡、低频 token 生成问题，以及 tokenization 对推荐系统的启发。"
+ref: "llm-tokenization-interesting-phenomena"
 ---
 
 来源 PDF：`大模型分词技术以及相关的有趣现象.pdf`  

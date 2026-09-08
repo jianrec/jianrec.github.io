@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="{% if page.lang == 'en' %}en{% else %}zh-CN{% endif %}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -94,6 +94,18 @@
     /* 主题切换按钮 */
     .theme-toggle { background: none; border: 1px solid var(--color-border); cursor: pointer; padding: 0.35rem 0.5rem; border-radius: 4px; font-size: 0.9rem; color: var(--color-muted); transition: all 0.2s; }
     .theme-toggle:hover { border-color: var(--color-accent); color: var(--color-accent); }
+
+    /* 中英文切换按钮：与主题按钮同一视觉规格 */
+    .lang-toggle {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-width: 32px; padding: 0.35rem 0.5rem;
+      border: 1px solid var(--color-border); border-radius: 4px;
+      background: none; color: var(--color-muted);
+      font-family: var(--font-display); font-size: 0.85rem; font-weight: 600;
+      letter-spacing: 0.03em; line-height: 1;
+      text-decoration: none; transition: all 0.2s;
+    }
+    .lang-toggle:hover { border-color: var(--color-accent); color: var(--color-accent); text-decoration: none; }
 
     /* 响应式：手机端调整 */
     @media (max-width: 768px) {
@@ -521,7 +533,8 @@
       /* 变身时，强行隐藏返回键、汉堡包、亮度键 */
       .nav-inner.search-active .nav-left-zone,
       .nav-inner.search-active .nav-toggle,
-      .nav-inner.search-active .theme-toggle { display: none; }
+      .nav-inner.search-active .theme-toggle,
+      .nav-inner.search-active .lang-toggle { display: none; }
 
       /* 让搜索框霸占 100% 宽度 */
       .nav-inner.search-active .nav-right-box { flex: 1; width: 100%; justify-content: flex-end; }
@@ -544,8 +557,14 @@
   <nav>
     <div class="nav-inner">
       <div class="nav-left-zone">
-        {% if page.layout == "post" or page.collection == "notes" %}
-          {% if page.main_category == "论文阅读" %}
+        {% if page.layout == "post" or page.collection == "notes" or page.collection == "en_notes" or page.collection == "en_posts" %}
+          {% if page.lang == "en" %}
+            {% if page.main_category == "Paper Reading" %}
+              <a href="{{ site.baseurl }}/en/papers/" class="nav-back">← Paper Reading</a>
+            {% else %}
+              <a href="{{ site.baseurl }}/en/essays/" class="nav-back">← Technical Notes</a>
+            {% endif %}
+          {% elsif page.main_category == "论文阅读" %}
             <a href="{{ site.baseurl }}/papers/" class="nav-back">← 论文阅读</a>
           {% elsif page.main_category == "技术随笔" %}
             <a href="{{ site.baseurl }}/essays/" class="nav-back">← 技术随笔</a>
@@ -562,6 +581,13 @@
         <span></span><span></span><span></span>
       </button>
 
+      {% if page.lang == "en" %}
+      <ul class="nav-links">
+        <li><a href="{{ site.baseurl }}/en/">Home</a></li>
+        <li><a href="{{ site.baseurl }}/en/papers/">Paper Reading</a></li>
+        <li><a href="{{ site.baseurl }}/en/essays/">Technical Notes</a></li>
+      </ul>
+      {% else %}
       <ul class="nav-links">
         <li><a href="{{ site.baseurl }}/">首页</a></li>
         {% if llm_nav_notes.size > 0 %}
@@ -570,6 +596,7 @@
         <li><a href="{{ site.baseurl }}/papers/">论文阅读</a></li>
         <li><a href="{{ site.baseurl }}/essays/">技术随笔</a></li>
       </ul>
+      {% endif %}
 
       <div class="nav-right-box" style="display: flex; align-items: center; gap: 1rem;">
         <div id="search-container">
@@ -581,13 +608,14 @@
             <span class="search-icon">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
             </span>
-            <input type="text" id="search-input" placeholder="搜索技术文章或笔记...">
+            <input type="text" id="search-input" placeholder="{% if page.lang == 'en' %}Search articles and notes...{% else %}搜索技术文章或笔记...{% endif %}">
             <button id="close-search-btn" onclick="toggleMobileSearch()">✕</button>
           </div>
 
           <ul id="results-container"></ul>
         </div>
 
+        {% include lang-toggle.html %}
         <button class="theme-toggle" onclick="toggleTheme()" title="切换模式">&#9683;</button>
       </div>
     </div>

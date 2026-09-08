@@ -9,6 +9,7 @@ course: "AI Coding"
 material_type: "Technical Overview"
 description: "A walkthrough of how AI coding evolved from 2021 to 2026: from IDE completion, IDE chat, and agentic IDEs, to the explosion of CLI agents and the multi-agent desktop command center."
 lang: en
+ref: "ai-coding-evolution-2021-2026"
 ---
 
 The change in AI coding over the past few years is not just that models got stronger. It is that the position developers occupy when collaborating with AI has kept shifting.

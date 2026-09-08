@@ -8,6 +8,7 @@ discipline: "Agent"
 course: "learn-claude-code"
 material_type: "综合复习"
 description: "综合复习 learn-claude-code s01-s20：从最小 Agent Loop 到工具、权限、hooks、memory、team、worktree、MCP 和完整 coding agent harness。"
+ref: "learn-claude-code-s01-s20-comprehensive-review"
 ---
 
 创建日期：2026-06-28  

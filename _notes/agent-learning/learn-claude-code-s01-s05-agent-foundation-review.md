@@ -8,6 +8,7 @@ discipline: "Agent"
 course: "learn-claude-code"
 material_type: "源码学习"
 description: "复习 learn-claude-code s01-s05：从最小 agent loop、多工具分发、permission pipeline、hook system 到 todo_write 任务状态管理。"
+ref: "learn-claude-code-s01-s05-agent-foundation-review"
 ---
 
 创建日期：2026-06-26  

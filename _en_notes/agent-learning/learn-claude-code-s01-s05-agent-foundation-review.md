@@ -9,6 +9,7 @@ course: "learn-claude-code"
 material_type: "Source Code Study"
 description: "Reviewing learn-claude-code s01-s05: from the minimal agent loop, multi-tool dispatch, the permission pipeline, and the hook system, all the way to task state management with todo_write."
 lang: en
+ref: "learn-claude-code-s01-s05-agent-foundation-review"
 ---
 
 Created: 2026-06-26  

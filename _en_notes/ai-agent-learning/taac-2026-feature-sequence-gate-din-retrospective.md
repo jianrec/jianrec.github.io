@@ -9,6 +9,7 @@ course: "TAAC-2026"
 material_type: "Competition Retrospective"
 description: "A design retrospective on the TAAC-2026 project covering sparse-dense pairs, dense splitting, time features, the sequence gate, the DIN target-aware branch, and training stability."
 lang: en
+ref: "taac-2026-feature-sequence-gate-din-retrospective"
 ---
 
 The previous post recorded which modules I changed on top of the TAAC-2026 baseline. This one leans more toward "why I changed them that way": where exactly the sparsity in the PCVR task shows up, why I did not directly replicate a heavier unified Transformer route, and how I added pair features, time signals, and candidate-relevant interests inside the HyFormer framework.

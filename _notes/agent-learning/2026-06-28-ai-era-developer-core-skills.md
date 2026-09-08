@@ -8,6 +8,7 @@ discipline: "Agent"
 course: "AI Coding"
 material_type: "视频笔记"
 description: "整理 Google for Developers 演讲 Build core skills to thrive as an AI-era developer：AI 时代开发者的核心能力，不是更快写代码，而是更会澄清意图、设计系统、验证输出和组织反馈。"
+ref: "ai-era-developer-core-skills"
 ---
 
 > 原始 PDF：[点击打开 PDF]({{ '/assets/pdfs/ai-era-developer-core-skills.pdf' | relative_url }})

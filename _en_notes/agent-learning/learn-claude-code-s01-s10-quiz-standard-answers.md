@@ -9,6 +9,7 @@ course: "learn-claude-code"
 material_type: "Quiz Notes"
 description: "A compilation of the quiz answer key for learn-claude-code s01-s10, covering the agent loop, multiple tools, permissions, hooks, todos, subagents, skill loading, context compaction, memory, and dynamic system prompts."
 lang: en
+ref: "learn-claude-code-s01-s10-quiz-standard-answers"
 ---
 
 ## 0. Overview

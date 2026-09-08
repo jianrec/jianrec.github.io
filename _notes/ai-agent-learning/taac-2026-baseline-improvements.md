@@ -8,6 +8,7 @@ discipline: "LLM4Rec"
 course: "TAAC-2026"
 material_type: "竞赛复盘"
 description: "记录 TAAC-2026 代码相对 baseline 的主要改动、当前成绩，以及后续消融方向。"
+ref: "taac-2026-baseline-improvements"
 ---
 
 这篇文章记录 TAAC-2026 代码在官方 baseline 上做过的主要改动，也把目前分数放在前面，方便之后回看。这里的官方 baseline 指比赛给出的原始 `baseline/train` 代码；`0.8289*` 是在官方 baseline 上做第一阶段改进后的分数，不是 baseline 本身的分数。

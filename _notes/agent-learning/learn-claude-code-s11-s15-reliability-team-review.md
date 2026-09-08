@@ -8,6 +8,7 @@ discipline: "Agent"
 course: "learn-claude-code"
 material_type: "源码学习"
 description: "复习 learn-claude-code s11-s15：Error Recovery、Task System、Background Tasks、Cron Scheduler 和 Agent Teams。"
+ref: "learn-claude-code-s11-s15-reliability-team-review"
 ---
 
 ## 0. 总览

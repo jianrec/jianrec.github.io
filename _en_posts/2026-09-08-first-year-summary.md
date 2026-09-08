@@ -6,6 +6,7 @@ main_category: "Technical Notes"
 sub_category: "Life Stories"
 description: "In November 2025 I hadn't read a single line of code. Ten months later I'm preparing my thesis proposal. This is an unvarnished timeline retrospective: what I studied, how long I wasted, and what I'm actually missing."
 lang: en
+ref: "first-year-summary"
 ---
 
 In November 2025, I had never seriously looked at a single line of code. My daily computer use was opening WPS; when it came to anything computer-related, I was basically starting from zero.

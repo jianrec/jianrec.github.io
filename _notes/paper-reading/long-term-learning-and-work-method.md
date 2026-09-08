@@ -8,6 +8,7 @@ discipline: "论文阅读"
 course: "论文阅读"
 material_type: "学习方法总结"
 description: "从建立文献体系、多遍阅读论文和加强长期记忆，到选择重要的工作与促进成长的环境，整理一套可持续的学习与工作方法。"
+ref: "long-term-learning-and-work-method"
 ---
 
 核心思想：长期、稳定地投入少量时间，系统学习重要领域，持续产出有意义的工作，并选择能促进个人成长的环境。

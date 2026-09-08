@@ -8,6 +8,7 @@ discipline: "Agent"
 course: "learn-claude-code"
 material_type: "源码学习"
 description: "复习 learn-claude-code s06-s10：subagent 上下文隔离、skill 按需加载、context compact、memory 长期记忆和动态 system prompt。"
+ref: "learn-claude-code-s06-s10-context-capability-review"
 ---
 
 创建日期：2026-06-26  

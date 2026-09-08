@@ -8,6 +8,7 @@ course: "KuaiRand 跨域精排"
 sub_category: "LLM4Rec · 项目复盘"
 material_type: "项目复盘"
 description: "整理 KuaiRand 跨域多场景精排项目的业务问题、模型设计、消融口径和面试中容易被追问的点。"
+ref: "kuairand-cross-domain-ranking-interview-review"
 ---
 
 这份笔记用来复习 KuaiRand-27K 多场景精排项目。面试讲这个项目时，我不想从模块名开始堆，而是先把问题讲清楚：用户历史来自多个 tab，当前预测发生在某个 tab，不同 tab 背后的数据分布并不一样。

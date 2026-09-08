@@ -9,6 +9,7 @@ course: "learn-claude-code"
 material_type: "Source Code Study"
 description: "Reviewing learn-claude-code s06-s10: sub-agent context isolation, on-demand skill loading, context compaction, long-term memory, and dynamic system prompts."
 lang: en
+ref: "learn-claude-code-s06-s10-context-capability-review"
 ---
 
 Created: 2026-06-26  

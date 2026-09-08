@@ -8,6 +8,7 @@ course: "MiniOneRec"
 sub_category: "LLM4Rec · 项目复盘"
 material_type: "面试复习"
 description: "整理 MiniOneRec 复现项目的面试讲法：如何把序列推荐改造成 LLM 生成 Semantic ID，如何做 SFT、GRPO、约束 Beam Search，以及如何防守指标和贡献边界。"
+ref: "minionerec-generative-recommendation-interview-review"
 ---
 
 这篇是我给 MiniOneRec 项目准备的面试复习稿。它不是论文笔记，也不是 API 使用说明，而是按面试表达来组织：先讲清楚问题，再把 SID 构造、SFT、GRPO、约束解码和指标防守串成一条完整链路。

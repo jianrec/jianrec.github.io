@@ -7,6 +7,7 @@ sub_category: "生命故事"
 description: "7 月 19 日在上海中心大厦第一次参加 social。认识优秀的人，也重新审视自己的积累、表达和行动。"
 cover: "/assets/images/social/2026-07-19-group.jpeg"
 cover_position: "center"
+ref: "shanghai-tower-social-growth-start"
 ---
 
 7 月 19 日，在上海中心大厦，我第一次参加 social。

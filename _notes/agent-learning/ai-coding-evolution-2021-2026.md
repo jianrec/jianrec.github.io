@@ -8,6 +8,7 @@ discipline: "Agent"
 course: "AI Coding"
 material_type: "技术脉络"
 description: "整理 2021 到 2026 年 AI coding 的演进：从 IDE 补全、IDE Chat、agentic IDE，到 CLI agent 爆发和多 agent 桌面指挥中心。"
+ref: "ai-coding-evolution-2021-2026"
 ---
 
 这几年 AI coding 的变化，不只是模型越来越强，而是开发者和 AI 的协作位置一直在变。

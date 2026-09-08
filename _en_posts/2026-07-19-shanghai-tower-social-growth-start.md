@@ -8,6 +8,7 @@ description: "On July 19 I went to my first social, at Shanghai Tower. I met imp
 cover: "/assets/images/social/2026-07-19-group.jpeg"
 cover_position: "center"
 lang: en
+ref: "shanghai-tower-social-growth-start"
 ---
 
 On July 19, at Shanghai Tower, I went to my first social.

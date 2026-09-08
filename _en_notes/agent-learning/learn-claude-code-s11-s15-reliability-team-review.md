@@ -9,6 +9,7 @@ course: "learn-claude-code"
 material_type: "Source Code Study"
 description: "Reviewing learn-claude-code s11-s15: Error Recovery, Task System, Background Tasks, Cron Scheduler, and Agent Teams."
 lang: en
+ref: "learn-claude-code-s11-s15-reliability-team-review"
 ---
 
 ## 0. Overview
