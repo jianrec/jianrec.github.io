@@ -1,5 +1,6 @@
 title: 周健 | Jian Zhou
-description: 应用统计硕士在读，研究兴趣为 LLM、LLM4Rec 与 Agent 系统
+description: 哈尔滨工业大学应用统计硕士在读，研究方向为大模型推理中的缓存压缩及复用
+description_en: "M.A.S. student in Applied Statistics at Harbin Institute of Technology, working on KV cache compression and reuse in large language model inference"
 url: "https://jianrec.github.io"
 baseurl: ""
 lang: "zh-CN"
