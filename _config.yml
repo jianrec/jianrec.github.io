@@ -21,13 +21,13 @@ reaction_api: ""
 traffic:
   busuanzi: true
 
-comments:
-  provider: "utterances"
-  utterances:
-    repo: "jianrec/jianrec.github.io"
-    issue_term: "pathname"
-    label: "comment"
-    theme: "preferred-color-scheme"
+# comments:
+#   provider: "utterances"
+#   utterances:
+#     repo: "jianrec/jianrec.github.io"
+#     issue_term: "pathname"
+#     label: "comment"
+#     theme: "preferred-color-scheme"
 
 markdown: kramdown
 permalink: /posts/:year-:month-:day-:title/
